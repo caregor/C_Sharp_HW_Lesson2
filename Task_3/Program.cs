@@ -24,18 +24,19 @@ int number = Promt("Enter a number: ");
 
 if (number < 100)
 {
-    System.Console.WriteLine(" the third digit doesn't exisit");
+    System.Console.WriteLine(" the third digit doesn't exisit!");
 }
 else
 {
-    for (int i=10; i > 1; i--)
+    for (int i=9; i > 1; i--)
     {
         if(number / Pow(10, i) != 0 )
         {
-            System.Console.WriteLine($" Digits is , {i+1}");
-            int total = number % Pow(10, i - 2);
-            total = total / Pow(10, i - 3);
-            System.Console.WriteLine(total);
+            
+            int digit = number % Pow(10, i - 1);
+            if (i > 2)
+                digit = digit / Pow(10, i - 2);
+            System.Console.WriteLine($"the 3`d digit is {digit}");
             break;
         }
     }
